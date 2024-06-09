@@ -10,12 +10,7 @@
 
 #include <rtthread.h>
 #include <board.h>
-
-#define Led1 GET_PIN(F, 9)
-#define Led2 GET_PIN(F,10)
-#define Key1 GET_PIN(E,4)
-#define Key2 GET_PIN(A,0)
-
+#include <inc/my_PIN.h>
 
 static rt_thread_t LED_thread;
 
@@ -49,7 +44,7 @@ void PIN_init(void){
     LED_thread = rt_thread_create("LED_thread", LED_thread_entry, RT_NULL, 512, 10, 10);
 
     if(LED_thread != RT_NULL){
-        rt_thread_startup(LED_thread);
+//        rt_thread_startup(LED_thread);
     }
 
     if(rt_pin_attach_irq(Key1, PIN_IRQ_MODE_RISING, KEY1_handler, RT_NULL) != RT_ERROR){

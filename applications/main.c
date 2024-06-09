@@ -14,8 +14,11 @@
 #define DBG_LVL DBG_LOG
 #include <rtdbg.h>
 
+#include <inc/my_PIN.h>
+
 int main(void)
 {
+    PIN_init();
     while (RT_TRUE)
     {
         rt_thread_mdelay(1000);

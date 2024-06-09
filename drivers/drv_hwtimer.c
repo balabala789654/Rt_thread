@@ -86,7 +86,7 @@ struct stm32_hwtimer
 static struct stm32_hwtimer stm32_hwtimer_obj[] =
 {
 #ifdef BSP_USING_TIM1
-#define TIM1_CONFIG
+    TIM1_CONFIG,
 #endif
 
 #ifdef BSP_USING_TIM2
